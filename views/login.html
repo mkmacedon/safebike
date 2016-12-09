@@ -1,0 +1,48 @@
+<section id="login">
+	<img ng-src="/images/logotype.png" alt="Logo" class="logo" />
+	<!-- Login form -->
+	<form name="vm.loginForm" novalidate>
+		<!-- Username input -->
+		<div class="form-group"
+		ng-class="{ 'has-feedback' : vm.loginForm.username.$touched,
+		'has-error' : vm.loginForm.username.$invalid,
+		'has-success' : vm.loginForm.username.$valid }">
+			<label for="username" class="sr-only">Username</label>
+			<input type="email" name="username" class="form-control" placeholder="Username"
+			ng-model="vm.credentials.username"
+			required />
+			<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"
+			ng-if="vm.loginForm.username.$valid && vm.loginForm.username.$touched"
+			></span>
+  			<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"
+			ng-if="vm.loginForm.username.$invalid && vm.loginForm.username.$touched"></span>
+		</div>
+		<!-- Password input -->
+		<div class="form-group"
+		ng-class="{ 'has-feedback' : vm.loginForm.password.$touched,
+		'has-error' : vm.loginForm.password.$invalid,
+		'has-success' : vm.loginForm.password.$valid }">
+			<label for="password" class="sr-only"></label>
+			<input type="password" name="password" class="form-control" placeholder="Password"ng-model="vm.credentials.password"
+			required />
+			<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"
+			ng-if="vm.loginForm.password.$valid && vm.loginForm.password.$touched"
+			></span>
+  			<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"
+			ng-if="vm.loginForm.password.$invalid && vm.loginForm.password.$touched"></span>
+		</div>
+		<!-- Submit button -->
+		<button ng-click="vm.login();"
+		ng-disabled="(vm.loginForm.$invalid || vm.loginForm.$pristine)" 
+		class="btn btn-sm btn-black btn-login">Login</button>
+	</form>
+	<!-- Auxiliary controlls -->
+	<div class="row">
+		<div class="col-md-6 text-left">
+			<a href="#/register">Register</a>
+		</div>
+		<div class="col-md-6 text-right">
+			<a href="#/login">Lost password?</a>
+		</div>
+	</div>
+</section>

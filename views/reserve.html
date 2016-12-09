@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-md-12">
+		<map zoom-to-include-markers="true">
+		   <marker ng-repeat="station in vm.stations" position="{{station.Longitute}}"></marker>
+		</map>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-lg3">
+		<div class="list-group">
+		  	<button type="button" class="list-group-item">
+		  		<span class="glyphicon glyphicon-map-marker"></span> 
+		  		TroTek 
+		  	</button>
+		  	<button type="button" class="list-group-item">
+		  		<span class="glyphicon glyphicon-map-marker"></span> 
+		  		Leüthenhaven P-hus
+		  	</button>
+		</div>
+	</div>
+</div>
